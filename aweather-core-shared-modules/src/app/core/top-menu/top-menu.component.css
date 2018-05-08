@@ -1,0 +1,43 @@
+.header_logo {
+    padding: 0px;
+    font-size: 18px !important;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+.fa {
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.mat-down {
+    margin-left: 10px;
+}
+
+.mat-toolbar .toolbar-right {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.toolbar-icons-menu {
+    margin-top: -8px;
+}
+
+.mat-toolbar {
+    min-height: initial !important;
+    height: 50px !important;
+    padding: 0px 5px 0 0px !important;
+}
+
+.mat-toolbar .mat-toolbar-row {
+    align-items: initial !important;
+    height: 50px;
+}
+
+.mat-toolbar .mat-icon-button {
+    height: 40px;
+    line-height: 41px;
+}
+
+

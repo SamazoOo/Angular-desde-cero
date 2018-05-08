@@ -1,0 +1,51 @@
+<mat-card class="login-card" (mouseover)='bluringBackground()' (mouseleave)='unbluringBackground()'>
+  <div class="login_logo">
+    <img src="https://drive.google.com/uc?id=1UCuwEFL2_wANdGi7_6N7_xs5YDoBSzuq" alt="Aweather" title="Aweather" />
+  </div>
+  <div class="border-top-input">
+    <form [formGroup]="loginGroup" (submit)="loginSubmit(loginGroup)">
+      <mat-card-content>
+        <mat-grid-list cols="1" rowHeight="60px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput placeholder="Usuario" formControlName="user">
+              <mat-error *ngIf="loginGroup.get('user').hasError('required')">
+                El usuario es requerido
+              </mat-error>
+              <mat-error *ngIf="loginGroup.get('user').hasError('email')">
+                El email del usuario no es válido
+              </mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Contraseña" formControlName="password">
+              <mat-error *ngIf="loginGroup.get('password').hasError('required')">
+                El password es requerido
+              </mat-error>
+              <mat-error *ngIf="loginGroup.get('password').hasError('minlength')">
+                El password no es válido
+              </mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-card-actions class="mat-card-button-login">
+          <button mat-raised-button type="submit" [disabled]="loginGroup.invalid" class="login-button mat-primary">
+            <i class="fas fa-key fa-lg"></i>
+          </button>
+        </mat-card-actions>
+      </mat-card-content>
+    </form>
+  </div>
+</mat-card>
+
+
+<div class="full-page-background" [@myAnimation]="showBackgroundImage" [ngStyle]="{'background-image': 'url(' + activeBackgroundImage + ')'}"></div>
+<!--PREVENT BLINKING-->
+<img src="https://drive.google.com/uc?id=1wsk0lus_UmgB1x7YBHZ30PHhd59oI_QJ" style="display:none;" />
+<img src="https://drive.google.com/uc?id=1hSNFcWC5LECKPbws1cMJfcmVGiXPe40v" style="display:none;" />
+<img src="https://drive.google.com/uc?id=13XuzG26KujCSlAqGwAnXMtjNqx5mxYFA" style="display:none;" />
+
+<img src="https://drive.google.com/uc?id=13sGmUKF193j2BDrvOtAuGMV27mEe5HSE" style="display:none;" />
+<img src="https://drive.google.com/uc?id=1uf_L2Ms1uGLXMgN5WCrUj0zTVdxN-g2p" style="display:none;" />
+<img src="https://drive.google.com/uc?id=13nbhGXFU0icwZ1llfTDAFap0r36SbRXX" style="display:none;" />

@@ -1,0 +1,12 @@
+<div [ngSwitch]="weatherInfo">
+  <i *ngSwitchCase="'Sunny'" class="wi wi-day-sunny"></i>
+  <i *ngSwitchCase="'Cloudy'" class="wi wi-cloudy"></i>
+  <i *ngSwitchCase="'Mostly Cloudy'" class="wi wi-day-cloudy-high"></i>
+  <i *ngSwitchCase="'Partly Cloudy'" class="wi wi-day-cloudy"></i>
+  <i *ngSwitchCase="'Rain'" class="wi wi-day-showers"></i>
+  <i *ngSwitchCase="'Showers'" class="wi wi-day-showers"></i>
+  <i *ngSwitchCase="'Scattered Thunderstorms'" class="wi wi-day-lightning"></i>
+  <i *ngSwitchCase="'Scattered Showers'" class="wi wi-day-rain-mix"></i>
+  <i *ngSwitchCase="'Mostly Sunny'" class="wi wi-day-sunny-overcast"></i>
+  <i *ngSwitchDefault class="wi wi-day-sunny"></i>
+</div>

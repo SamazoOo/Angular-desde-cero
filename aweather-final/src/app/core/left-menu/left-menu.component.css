@@ -1,0 +1,75 @@
+.menu-list-divider {
+    width: 100%;
+    text-align: right;
+    padding-right: 5px;
+    color: #202020;
+    font-size: 10px;
+    background-color: #d3d3d3;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+:host /deep/ .mat-list-text {
+    margin-left: 36px;
+}
+
+.font-size-20 {
+    font-size: 20px;
+}
+
+:host /deep/ .mat-list-item .mat-list-item-content:hover {
+    color: #34579c;
+    background-color: #34589c14;
+    cursor: pointer;
+}
+
+
+/******************** DROPDOWN *****************/
+
+
+.drop-down .drop-down-items {
+    display: none;
+    transition: height 3s ease-out;
+}
+
+.drop-down .drop-down-items .mat-list-text {
+    font-size: 12px;
+}
+
+.drop-down .drop-down-items .mat-button {
+    line-height: 40px !important;
+}
+
+.drop-down .drop-down-toggle::after {
+    position: absolute;
+    right: 12px;
+    top: 14px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-bottom: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+    transition: .3s;
+    font-size: 20px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    color: #455a64 !important;
+}
+
+.drop-down.open .drop-down-items {
+    display: block;
+}
+
+.drop-down.open .drop-down-toggle::after {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+
+/******************** FIN DROPDOWN *****************/
+
+:host /deep/ .mat-list-item.active {
+    background-color: #34579c;
+    color: #fafafa;
+}

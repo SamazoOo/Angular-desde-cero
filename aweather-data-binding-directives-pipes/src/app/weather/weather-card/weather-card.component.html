@@ -1,0 +1,58 @@
+<mat-card class="weather-card">
+  <mat-card-header class="weather-header">
+    <div mat-card-avatar class="weather-header-icon">
+      <app-weather-icon [weatherInfo]="weather.info"></app-weather-icon>
+    </div>
+    <mat-card-title>{{weather.city}}</mat-card-title>
+    <mat-card-subtitle>{{weather.hourMessure}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="weather-card-content-info">
+      <mat-grid-list cols="4" rowHeight="30px">
+        <mat-grid-tile>
+          <i class="wi wi-strong-wind"></i> {{weather.windspeed}} km/h</mat-grid-tile>
+        <mat-grid-tile>
+          <i class="wi wi-wind from-{{weather.windspeed}}-deg"></i>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <i class="wi wi-humidity"></i> {{weather.humidity / 100 | percent:'2.0-2'}}</mat-grid-tile>
+        <mat-grid-tile>
+          <i class="wi wi-barometer"></i> {{weather.pressure | number: '4.1-2'}}
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <mat-grid-list cols="2" rowHeight="30px">
+      <mat-grid-tile colspan="2" class="weather-info-text">
+        {{weather.info | lowercase}}
+      </mat-grid-tile>
+      <mat-grid-tile class="weather-info-temp-up">
+        <i class="wi wi-direction-up"></i> {{weather.maxtemperature | celsius}}
+      </mat-grid-tile>
+      <mat-grid-tile class="weather-info-temp-down">
+        <i class="wi wi-direction-down"></i> {{weather.mintemperature | celsius}}
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="1" rowHeight="80px">
+      <mat-grid-tile class="weather-info-temp">
+        <div class="number" [ngStyle]="{color: getColorTemperature()}">{{weather.temperature | celsius: false}}</div>
+        <div class="measure">ºC</div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="5" rowHeight="120px">
+      <mat-grid-tile class="weather-info-sunrise">
+        <div class="hour">{{weather.sunrise}}</div>
+        <i class="wi wi-sunrise"></i>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3">
+        <mat-progress-spinner class="sunrise-sunset-spinner" diameter="120" strokeWidth="110" mode="determinate" [value]="weather.percentToSunset">
+        </mat-progress-spinner>
+      </mat-grid-tile>
+      <mat-grid-tile class="weather-info-sunset">
+        <div class="hour">{{weather.sunset}}</div>
+        <i class="wi wi-sunset"></i>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <app-weather-forecast [forecast]="weather.forecast"></app-weather-forecast>
+  </mat-card-content>
+</mat-card>

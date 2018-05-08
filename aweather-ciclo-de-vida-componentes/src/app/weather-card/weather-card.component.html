@@ -1,0 +1,57 @@
+<mat-card class="weather-card">
+    <mat-card-header class="weather-header">
+        <div mat-card-avatar class="weather-header-icon">
+            <i class="wi wi-day-sunny"></i>
+        </div>
+        <mat-card-title>Madrid</mat-card-title>
+        <mat-card-subtitle>14:14 pm</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="weather-card-content-info">
+            <mat-grid-list cols="4" rowHeight="30px">
+                <mat-grid-tile>
+                    <i class="wi wi-strong-wind"></i> 22 km/h</mat-grid-tile>
+                <mat-grid-tile>
+                    <i class="wi wi-wind from-270-deg"></i>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <i class="wi wi-humidity"></i> 70 %</mat-grid-tile>
+                <mat-grid-tile>
+                    <i class="wi wi-barometer"></i> 1002.0
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+        <mat-grid-list cols="2" rowHeight="30px">
+            <mat-grid-tile colspan="2" class="weather-info-text">
+                Soleado
+            </mat-grid-tile>
+            <mat-grid-tile class="weather-info-temp-up">
+                <i class="wi wi-direction-up"></i> 17 ºC
+            </mat-grid-tile>
+            <mat-grid-tile class="weather-info-temp-down">
+                <i class="wi wi-direction-down"></i> 4 ºC
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile class="weather-info-temp">
+                <div class="number">11</div>
+                <div class="measure">ºC</div>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-divider></mat-divider>
+        <mat-grid-list cols="5" rowHeight="120px">
+            <mat-grid-tile class="weather-info-sunrise">
+                <div class="hour">6:31 am</div>
+                <i class="wi wi-sunrise"></i>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="3">
+                <mat-progress-spinner class="sunrise-sunset-spinner" diameter="120" strokeWidth="110" mode="determinate" value="30">
+                </mat-progress-spinner>
+            </mat-grid-tile>
+            <mat-grid-tile class="weather-info-sunset">
+                <div class="hour">18:48 pm</div>
+                <i class="wi wi-sunset"></i>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>

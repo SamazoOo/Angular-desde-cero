@@ -1,0 +1,19 @@
+<div class="menu-list-divider"> v.1.0 </div>
+<mat-list>
+  <mat-list-item>
+    <a mat-button mat-line>Añadir ciudades</a>
+    <i class="fab fa-cloudversify font-size-20"></i>
+  </mat-list-item>
+  <div class="menu-list-divider"> Ciudades </div>
+  <div appDropdown class="drop-down">
+    <mat-list-item routerLinkActive="active">
+      <a mat-button mat-line appDropdowntoggle class="drop-down-toggle">Ciudades</a>
+    </mat-list-item>
+    <div class="drop-down-items">
+      <mat-list-item *ngFor="let city of cities">
+        <a mat-button mat-line>{{city}}</a>
+        <i class="fas fa-map-marker-alt font-size-20"></i>
+      </mat-list-item>
+    </div>
+  </div>
+</mat-list>

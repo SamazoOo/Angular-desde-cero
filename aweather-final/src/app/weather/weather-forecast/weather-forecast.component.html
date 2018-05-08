@@ -1,0 +1,17 @@
+<mat-divider></mat-divider>
+<div class="forecast-title">Previsión</div>
+<mat-divider></mat-divider>
+<mat-grid-list cols="5" rowHeight="40px" class="forecast-list" *ngFor="let forecast of forecasts">
+    <mat-grid-tile colspan="2" class="forecast-date">
+        {{forecast?.date | date: 'fullDate'}}
+    </mat-grid-tile>
+    <mat-grid-tile class="forecast-icon">
+        <app-weather-icon [weatherInfo]="forecast?.info"></app-weather-icon>
+    </mat-grid-tile>
+    <mat-grid-tile class="forecast-temp-up">
+        <i class="wi wi-direction-up"></i> {{forecast?.maxTemperature | celsius}}
+    </mat-grid-tile>
+    <mat-grid-tile class="forecast-temp-down">
+        <i class="wi wi-direction-down"></i> {{forecast?.minTemperature | celsius}}
+    </mat-grid-tile>
+</mat-grid-list>
