@@ -24,10 +24,10 @@ export class WeatherCardComponent implements OnInit {
       this.cityName = <string>(params['cityName'] ? params['cityName'] : 'Madrid, ES');
       this._weatherService.getWeatherInfo(this.cityName).subscribe(
         data => {
-          if (data['query'].results === undefined) {
+          if (data['location'] === undefined) {
             alert('La ciudad buscada no existe');
           } else {
-            this.weather = this._weatherService.mapResult(data['query'].results.channel);
+            this.weather = this._weatherService.mapResult(data);
           }
         },
         error => {

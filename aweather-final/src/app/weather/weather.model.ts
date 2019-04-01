@@ -46,7 +46,8 @@ export class Weather {
         if (this.date === undefined) {
             return '';
         }
-        const dateMeassure = new Date(this.date.split(', ')[1].substring(0, this.date.split(', ')[1].lastIndexOf(' ')));
+        const dateMeassure = new Date(this.date);
+        // .split(', ')[1].substring(0, this.date.split(', ')[1].lastIndexOf(' ')));
         return `${dateMeassure.getHours().toString().padStart(2, '0')}:${dateMeassure.getMinutes().toString().padStart(2, '0')} ${dateMeassure.getHours() > 14 ? 'pm' : 'am'}`;
     }
 
